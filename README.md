@@ -45,7 +45,7 @@ Diseñar e implementar una aplicación que permita a un usuario:
 ### 🔐 Autenticación (estructura base)
 - Manejo de sesión mediante store (`AuthStore`).
 - Arquitectura preparada para guards y escalabilidad futura.
-
+- Login con usuario: Cualquier *Nombre completo*, contraseña: *cualquier contraseña*
 ---
 
 ## 🌓 Experiencia de usuario
