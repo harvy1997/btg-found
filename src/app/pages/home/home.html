@@ -1,0 +1,58 @@
+<main class="flex-1 p-6 md:p-12 max-w-7xl mx-auto w-full overflow-x-hidden">
+
+    <!-- Hero Header: Value Statement -->
+    <header class="mb-16">
+        <p class="text-secondary dark:text-on-surface font-bold text-xs uppercase tracking-[0.3em] mb-4">
+            Dinero disponible
+        </p>
+
+        <div class="flex flex-col md:flex-row md:items-end gap-6 justify-between">
+            <div>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-none
+                    text-primary dark:text-secondary">
+                    $2,450,800,000
+                </h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex flex-col gap-8">
+
+        <!-- Active FPV/FIC Management -->
+        <section class="w-full">
+            <p-carousel [value]="cards" [numVisible]="2" [numScroll]="1" [showIndicators]="false"
+                [showNavigators]="false" [responsiveOptions]="responsiveOptions" [autoplayInterval]="3000"
+                [circular]="true">
+                <ng-template pTemplate="item" let-card>
+                    <div class="px-2">
+                        <app-found-card />
+                    </div>
+                </ng-template>
+            </p-carousel>
+        </section>
+
+        <!-- Recent Activity List -->
+        <section class="lg:col-span-12 mt-8">
+            <div class="flex items-center justify-between mb-8 border-b
+                border-outline/10 dark:border-on-surface/10 pb-4">
+                <h2 class="text-2xl font-bold tracking-tight text-primary dark:text-secondary">
+                    Fondos disponibles
+                </h2>
+            </div>
+
+            <div class="flex flex-col gap-3 max-h-[80vh] overflow-y-auto">
+                <app-found-detail-card />
+                <app-found-detail-card />
+                <app-found-detail-card />
+                <app-found-detail-card />
+                <app-found-detail-card />
+                <app-found-detail-card />
+                <app-found-detail-card />
+                <app-found-detail-card />
+                <app-found-detail-card />
+                <app-found-detail-card />
+                <app-found-detail-card />
+            </div>
+        </section>
+    </div>
+</main>

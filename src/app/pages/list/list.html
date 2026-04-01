@@ -1,0 +1,149 @@
+<!-- Value Statement Card -->
+<section class="mb-12 relative overflow-hidden bg-primary-container hover:bg-primary-container/80
+    dark:bg-surface-lowest dark:hover:bg-surface-lowest/80
+    p-12 md:p-16 rounded-sm shadow-2xl transition-colors">
+
+    <!-- Background Blur Shapes -->
+    <div class="absolute inset-0 opacity-20 pointer-events-none">
+        <div class="absolute -right-20 -top-20 w-96 h-96 bg-secondary dark:bg-secondary/70 rounded-full blur-[100px]">
+        </div>
+        <div
+            class="absolute -left-20 -bottom-20 w-96 h-96 bg-primary dark:bg-primary-container/70 rounded-full blur-[100px]">
+        </div>
+    </div>
+
+    <div class="relative z-10 flex flex-col md:flex-row justify-between items-end gap-8">
+        <div class="space-y-2">
+            <p class="font-label text-sm md:text-md uppercase tracking-[0.3em]
+                text-on-primary-fixed-variant dark:text-on-surface font-bold">
+                Consolidated Net Worth
+            </p>
+            <h2 class="text-4xl md:text-6xl font-headline font-extrabold
+                text-primary dark:text-secondary tracking-tighter">
+                $4,892,104.22
+            </h2>
+            <div class="flex items-center space-x-3 mt-4">
+                <span class="bg-secondary/20 dark:bg-secondary/20
+                    text-secondary-container dark:text-secondary
+                    px-3 py-1 text-xs font-bold rounded-full
+                    border border-secondary/30 dark:border-secondary/30 flex items-center">
+                    <span class="material-symbols-outlined text-xs mr-1">trending_up</span> +12.4%
+                </span>
+                <span class="text-on-primary-fixed-variant dark:text-on-surface
+                    text-xs opacity-80 uppercase tracking-widest font-semibold">
+                    vs last quarter
+                </span>
+            </div>
+        </div>
+
+        <div class="w-full md:w-1/3 h-32 md:h-48 relative">
+            <div class="absolute inset-0 flex items-end space-x-2">
+                <div class="flex-1 bg-secondary/20 dark:bg-secondary/20 h-[30%] rounded-t-sm"></div>
+                <div class="flex-1 bg-secondary/30 dark:bg-secondary/30 h-[45%] rounded-t-sm"></div>
+                <div class="flex-1 bg-secondary/40 dark:bg-secondary/40 h-[40%] rounded-t-sm"></div>
+                <div class="flex-1 bg-secondary/60 dark:bg-secondary/60 h-[70%] rounded-t-sm"></div>
+                <div class="flex-1 bg-secondary/80 dark:bg-secondary/80 h-[85%] rounded-t-sm"></div>
+                <div class="flex-1 bg-secondary dark:bg-secondary h-full rounded-t-sm"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Grid Layout for Allocation and Participations -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <!-- Allocation Chart Section (Bento Grid Left) -->
+    <div class="lg:col-span-4 space-y-8 ">
+        <div
+            class="bg-surface-low hover:bg-surface-low/80 dark:bg-surface-lowest dark:hover:bg-surface-lowest/80 p-8 rounded-md transition-colors">
+            <h3 class="text-xl font-bold text-primary dark:text-secondary mb-8 tracking-tight">
+                Distribución de activos
+            </h3>
+
+            <div class="space-y-6">
+                <!-- Fixed Income -->
+                <div class="flex items-center space-x-4">
+                    <div class="w-3 h-3 bg-primary dark:bg-secondary"></div>
+                    <div class="flex-1">
+                        <div
+                            class="flex justify-between text-xs font-bold uppercase tracking-widest mb-1 text-on-surface dark:text-on-surface">
+                            <span>Fixed Income</span>
+                            <span>45%</span>
+                        </div>
+                        <div
+                            class="h-1 bg-outline-variant/20 dark:bg-on-surface/20 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-primary dark:bg-secondary" style="width: 45%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Equities -->
+                <div class="flex items-center space-x-4">
+                    <div class="w-3 h-3 bg-secondary dark:bg-primary-container"></div>
+                    <div class="flex-1">
+                        <div
+                            class="flex justify-between text-xs font-bold uppercase tracking-widest mb-1 text-on-surface dark:text-on-surface">
+                            <span>Equities</span>
+                            <span>30%</span>
+                        </div>
+                        <div
+                            class="h-1 bg-outline-variant/20 dark:bg-on-surface/20 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-secondary dark:bg-primary-container" style="width: 30%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Real Estate -->
+                <div class="flex items-center space-x-4">
+                    <div class="w-3 h-3 bg-on-secondary-container dark:bg-secondary/70"></div>
+                    <div class="flex-1">
+                        <div
+                            class="flex justify-between text-xs font-bold uppercase tracking-widest mb-1 text-on-surface dark:text-on-surface">
+                            <span>Real Estate</span>
+                            <span>15%</span>
+                        </div>
+                        <div
+                            class="h-1 bg-outline-variant/20 dark:bg-on-surface/20 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-on-secondary-container dark:bg-secondary/70" style="width: 15%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Private Equity -->
+                <div class="flex items-center space-x-4">
+                    <div class="w-3 h-3 bg-on-surface-variant dark:bg-primary-container/50"></div>
+                    <div class="flex-1">
+                        <div
+                            class="flex justify-between text-xs font-bold uppercase tracking-widest mb-1 text-on-surface dark:text-on-surface">
+                            <span>Private Equity</span>
+                            <span>10%</span>
+                        </div>
+                        <div
+                            class="h-1 bg-outline-variant/20 dark:bg-on-surface/20 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-on-surface-variant dark:bg-primary-container/50" style="width: 10%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <!-- Participations List (Bento Grid Right) -->
+    <div class="lg:col-span-8">
+
+        <div class="flex items-baseline justify-between mb-8">
+            <h3 class="text-2xl font-bold text-[var(--primary)] dark:text-[var(--secondary)] tracking-tight">Mis
+                movimientos</h3>
+        </div>
+
+        <div class="flex flex-col max-h-[100vh] overflow-y-auto gap-3">
+            <!-- Participation Item 1 -->
+            <app-movement-card />
+            <app-movement-card />
+            <app-movement-card />
+            <app-movement-card />
+            <app-movement-card />
+        </div>
+    </div>
+</div>

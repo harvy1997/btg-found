@@ -1,0 +1,44 @@
+<aside class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 overflow-y-auto z-40
+    bg-surface dark:bg-surface-lowest shadow-2xl shadow-on-surface/5 py-8 space-y-4 transition-colors">
+
+    <!-- Header -->
+    <div class="px-8 flex-col space-y-1">
+        <span class="text-lg font-black tracking-tighter uppercase
+            text-primary dark:text-secondary">
+            BTG Bank
+        </span>
+
+        <span class="text-xs uppercase tracking-widest font-bold mb-8 block
+            text-secondary dark:text-on-surface dark:opacity-60">
+            Nombre de la persona
+        </span>
+    </div>
+
+    <!-- Navigation -->
+    <div class="px-0">
+        <app-nav-items variant="sidebar" />
+    </div>
+
+    <!-- Footer -->
+    <div class="mt-auto px-8 space-y-4">
+        <div class="flex flex-col space-y-2 pb-4 pt-2 border-t
+            border-outline/15 dark:border-on-surface/10">
+
+            <a href="#" class="flex items-center text-xs transition-opacity transition-colors
+                opacity-60 hover:opacity-100 hover:text-primary/90
+                text-primary dark:text-on-surface dark:hover:text-secondary">
+
+                <span class="material-symbols-outlined text-sm mr-2">settings</span>
+                Configuración
+            </a>
+
+            <a href="#" class="flex items-center text-xs transition-opacity transition-colors
+                opacity-60 hover:opacity-100 hover:text-primary/90
+                text-primary dark:text-on-surface dark:hover:text-secondary">
+
+                <span class="material-symbols-outlined text-sm mr-2">contact_support</span>
+                Soporte
+            </a>
+        </div>
+    </div>
+</aside>
