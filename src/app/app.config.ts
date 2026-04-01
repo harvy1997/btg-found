@@ -6,6 +6,8 @@ import Aura from '@primeuix/themes/aura';
 import { definePreset } from '@primeuix/themes';
 
 import { routes } from './app.routes';
+import { FondoStore } from './core/services/fondo/fondo';
+import { AuthStore } from './core/services/auth/auth-store';
 
 const MyPreset = definePreset(Aura, {
   semantic: {
@@ -30,6 +32,8 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
     provideAnimationsAsync(),
+    AuthStore,
+    FondoStore,
     providePrimeNG({
       theme: {
         preset: MyPreset,

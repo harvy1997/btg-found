@@ -63,7 +63,6 @@
   font-family: var(--font-family);
 }
 
-// .input:focus {
-//   border-bottom-color: var(--secondary);
-//   outline: none;
-// }
+div:where(.swal2-container) {
+  z-index: 999999999 !important;
+}

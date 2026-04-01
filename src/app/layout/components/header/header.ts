@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { NavItems } from '../nav-items/nav-items';
+
 
 @Component({
   selector: 'layout-header',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [NavItems],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
-export class Header { }
+export class Header {
+
+}
 

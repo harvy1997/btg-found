@@ -1,45 +1,54 @@
-<ng-container [ngSwitch]="variant">
+@switch (variant) {
+@case ('sidebar') {
 
-    <!-- Sidebar Layout -->
-    <ng-container *ngSwitchCase="'sidebar'">
-        <div class="space-y-1">
-            <ng-container *ngFor="let item of menuItems">
-                <a *ngIf="item.route; else staticSidebarItem" [routerLink]="item.route"
-                    routerLinkActive="font-bold border-l-4 text-primary border-secondary bg-primary/20 dark:text-secondary dark:border-primary dark:bg-surface-container/20 !pl-4"
-                    [routerLinkActiveOptions]="{exact: item.exact}"
-                    class="flex items-center pl-5 py-3 transition-all group text-primary opacity-60 hover:bg-primary/20 hover:text-primary/90 dark:text-on-surface dark:opacity-60 dark:hover:bg-surface-container/20 dark:hover:text-secondary">
-                    <span class="material-symbols-outlined mr-3">{{item.icon}}</span>
-                    <span class="font-manrope text-base font-medium">{{item.label}}</span>
-                </a>
-                <ng-template #staticSidebarItem>
-                    <a href="#"
-                        class="flex items-center pl-5 py-3 transition-all group text-primary opacity-60 hover:bg-primary/20 hover:text-primary/90 dark:text-on-surface dark:opacity-60 dark:hover:bg-surface-container/20 dark:hover:text-secondary">
-                        <span class="material-symbols-outlined mr-3">{{item.icon}}</span>
-                        <span class="font-manrope text-base font-medium">{{item.label}}</span>
-                    </a>
-                </ng-template>
-            </ng-container>
-        </div>
+<div class="space-y-1">
+    @for(item of menuItems; track item.label) {
+    <ng-container>
+        @if(item.route) {
+        <a [routerLink]="item.route"
+            routerLinkActive="font-bold border-l-4 text-primary border-secondary bg-primary/20 dark:text-secondary dark:border-primary dark:bg-surface-container/20 !pl-4"
+            [routerLinkActiveOptions]="{exact: item.exact}"
+            class="flex items-center pl-5 py-3 transition-all group text-primary opacity-60 hover:bg-primary/20 hover:text-primary/90 dark:text-on-surface dark:opacity-60 dark:hover:bg-surface-container/20 dark:hover:text-secondary">
+            <span class="material-symbols-outlined mr-3">{{item.icon}}</span>
+            <span class="font-manrope text-base font-medium">{{item.label}}</span>
+        </a>
+        }@else{
+        <a href="#"
+            class="flex items-center pl-5 py-3 transition-all group text-primary opacity-60 hover:bg-primary/20 hover:text-primary/90 dark:text-on-surface dark:opacity-60 dark:hover:bg-surface-container/20 dark:hover:text-secondary">
+            <span class="material-symbols-outlined mr-3">{{item.icon}}</span>
+            <span class="font-manrope text-base font-medium">{{item.label}}</span>
+        </a>
+        }
     </ng-container>
+    }
 
-    <!-- Bottom Bar Layout -->
-    <ng-container *ngSwitchCase="'bottom-bar'">
-        <ng-container *ngFor="let item of menuItems">
-            <a *ngIf="item.route; else staticBottomItem" [routerLink]="item.route"
-                routerLinkActive="!text-secondary !scale-110 !opacity-100 dark:!text-secondary"
-                [routerLinkActiveOptions]="{exact: item.exact}"
-                class="flex flex-col items-center justify-center text-primary opacity-40 hover:opacity-80 hover:text-primary/80 transition-all dark:text-on-surface dark:opacity-40 dark:hover:opacity-80 dark:hover:text-on-surface/80">
-                <span class="material-symbols-outlined">{{item.icon}}</span>
-                <span class="font-manrope text-[10px] uppercase tracking-widest font-bold mt-1">{{item.label}}</span>
-            </a>
-            <ng-template #staticBottomItem>
-                <a href="#"
-                    class="flex flex-col items-center justify-center text-primary opacity-40 hover:opacity-80 hover:text-primary/80 transition-opacity transition-colors dark:text-on-surface dark:opacity-40 dark:hover:opacity-80 dark:hover:text-on-surface/80">
-                    <span class="material-symbols-outlined">{{item.icon}}</span>
-                    <span class="font-manrope text-[10px] uppercase tracking-widest font-bold mt-1">{{item.label}}</span>
-                </a>
-            </ng-template>
-        </ng-container>
-    </ng-container>
+</div>
+
+}
+<!-- Bottom Bar Layout -->
+@case ('bottom-bar') {
+@for(item of menuItems; track item.label) {
+<ng-container>
+    @if(item.route) {
+    <a [routerLink]="item.route" routerLinkActive="!text-secondary !scale-110 !opacity-100 dark:!text-secondary"
+        [routerLinkActiveOptions]="{exact: item.exact}"
+        class="flex flex-col items-center justify-center text-primary opacity-40 hover:opacity-80 hover:text-primary/80 transition-all dark:text-on-surface dark:opacity-40 dark:hover:opacity-80 dark:hover:text-on-surface/80">
+        <span class="material-symbols-outlined">{{item.icon}}</span>
+        <span class="font-manrope text-[10px] uppercase tracking-widest font-bold mt-1">{{item.label}}</span>
+    </a>
+    }@else{
+    <a href="#"
+        class="flex flex-col items-center justify-center text-primary opacity-40 hover:opacity-80 hover:text-primary/80 transition-opacity transition-colors dark:text-on-surface dark:opacity-40 dark:hover:opacity-80 dark:hover:text-on-surface/80">
+        <span class="material-symbols-outlined">{{item.icon}}</span>
+        <span class="font-manrope text-[10px] uppercase tracking-widest font-bold mt-1">{{item.label}}</span>
+    </a>
+    }
 
 </ng-container>
+}
+<div (click)="logout()"
+    class="flex flex-col items-center justify-center text-primary opacity-40 hover:opacity-80 hover:text-primary/80 transition-opacity transition-colors dark:text-on-surface dark:opacity-40 dark:hover:opacity-80 dark:hover:text-on-surface/80">
+    <span class="material-symbols-outlined">logout</span>
+    <span class="font-manrope text-[10px] uppercase tracking-widest font-bold mt-1">Cerrar Sesión</span>
+</div>
+} }

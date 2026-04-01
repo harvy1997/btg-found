@@ -24,29 +24,43 @@
         <div class="p-8 md:p-16 flex flex-col justify-center">
             <div class="mb-12">
                 <h1 class="text-4xl font-headline font-bold text-primary dark:text-white tracking-tight">
-                    The Private Ledger
+                    Bienvenido
                 </h1>
             </div>
 
-            <form class="space-y-10 md:space-y-6">
+            <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="space-y-10 md:space-y-6">
                 <div class="group relative">
                     <label class="block text-xs font-label uppercase tracking-widest
-                        text-on-surface-variant group-focus-within:text-secondary transition-colors duration-300">
-                        Client ID
+                        text-on-surface-variant group-focus-within:text-secondary transition-colors duration-300"
+                        [ngClass]="{'text-secondary': loginForm.get('usuario')?.valid && loginForm.get('usuario')?.touched}">
+                        Nombre de usuario
                     </label>
-                    <input class="w-full bg-transparent border-0 border-b border-outline-variant py-3
+                    <input 
+                        formControlName="usuario"
+                        class="w-full bg-transparent border-0 border-b border-outline-variant py-3
                         focus:ring-0 focus:border-secondary transition-all font-body text-on-surface"
-                        placeholder="Enter your unique identifier" type="text" />
+                        [ngClass]="{'border-secondary': loginForm.get('usuario')?.valid && loginForm.get('usuario')?.touched, 'border-red-500': loginForm.get('usuario')?.invalid && loginForm.get('usuario')?.touched}"
+                        placeholder="Ingrese su nombre de usuario" type="text" />
+                    <div *ngIf="loginForm.get('usuario')?.invalid && loginForm.get('usuario')?.touched" class="mt-1">
+                        <p class="text-[10px] text-red-500 uppercase tracking-tighter">Este campo es requerido.</p>
+                    </div>
                 </div>
 
                 <div class="group relative">
                     <label class="block text-xs font-label uppercase tracking-widest
-                        text-on-surface-variant group-focus-within:text-secondary transition-colors duration-300">
-                        Secure Password
+                        text-on-surface-variant group-focus-within:text-secondary transition-colors duration-300"
+                        [ngClass]="{'text-secondary': loginForm.get('password')?.valid && loginForm.get('password')?.touched}">
+                        Contraseña
                     </label>
-                    <input class="w-full bg-transparent border-0 border-b border-outline-variant py-3
+                    <input 
+                        formControlName="password"
+                        class="w-full bg-transparent border-0 border-b border-outline-variant py-3
                         focus:ring-0 focus:border-secondary transition-all font-body text-on-surface"
-                        placeholder="••••••••••••" type="password" />
+                        [ngClass]="{'border-secondary': loginForm.get('password')?.valid && loginForm.get('password')?.touched, 'border-red-500': loginForm.get('password')?.invalid && loginForm.get('password')?.touched}"
+                        placeholder="Ingrese su contraseña" type="password" />
+                    <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="mt-1">
+                        <p class="text-[10px] text-red-500 uppercase tracking-tighter">Este campo es requerido.</p>
+                    </div>
                 </div>
 
                 <div class="flex items-center justify-between pt-1">
@@ -65,13 +79,13 @@
                             </span>
                         </div>
                         <span class="text-sm font-label uppercase tracking-wider text-on-surface-variant">
-                            Remember device
+                            Recordarme
                         </span>
                     </label>
 
                     <a class="text-xs font-label uppercase tracking-widest
                         text-secondary hover:text-primary transition-colors" href="#">
-                        Forgot Password
+                        Olvidaste tu contraseña?
                     </a>
                 </div>
 
@@ -80,16 +94,14 @@
                     font-headline font-bold tracking-widest uppercase text-sm
                     hover:bg-primary/80 dark:hover:bg-primary/70 text-white
                     transition-all duration-300 active:scale-[0.98] " type="submit">
-                        Access Private Ledger
+                        Ingresar
                     </button>
                 </div>
 
                 <section>
                     <div class="flex items-center gap-4 py-2">
                         <div class="h-[1px] flex-grow bg-outline-variant/30"></div>
-                        <span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">
-                            Secure Authentication
-                        </span>
+
                         <div class="h-[1px] flex-grow bg-outline-variant/30"></div>
                     </div>
                     <div class="flex justify-center">
@@ -106,7 +118,7 @@
 
                             <span class="text-xs font-label uppercase tracking-widest
                             group-hover:text-primary transition-colors">
-                                Biometric Authentication
+                                Autenticación biométrica
                             </span>
                         </button>
                     </div>

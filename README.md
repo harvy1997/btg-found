@@ -1,59 +1,96 @@
-# BtgFound
+# 🏦 BTG Bank — Gestión de Fondos de Inversión (FPV/FIC)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.5.
+[![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![PrimeNG](https://img.shields.io/badge/PrimeNG-DD0031?style=for-the-badge&logo=primeng&logoColor=white)](https://primeng.org/)
 
-## Development server
+Aplicación web desarrollada como **prueba técnica para Ingeniero Front-End**, basada en un caso de negocio real de BTG: la gestión de fondos de inversión (FPV/FIC).
 
-To start a local development server, run:
+El objetivo es ofrecer una experiencia moderna, intuitiva y responsiva que permita a los usuarios administrar sus inversiones de forma clara y eficiente.
 
-```bash
-ng serve
-```
+---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🎯 Objetivo de la prueba
 
-## Code scaffolding
+Diseñar e implementar una aplicación que permita a un usuario:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Gestionar su participación en fondos de inversión.
+- Visualizar su saldo y movimientos.
+- Recibir notificaciones al realizar operaciones.
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## ✨ Funcionalidades implementadas
 
-```bash
-ng generate --help
-```
+### 📊 Gestión de fondos
+- Visualización de fondos disponibles (FPV / FIC).
+- Suscripción a fondos validando monto mínimo requerido.
+- Cancelación de participación con actualización automática del saldo.
 
-## Building
+### 💰 Control financiero
+- Visualización del saldo total del usuario.
+- Validación de saldo disponible antes de cada operación.
+- Mensajes de error claros en caso de fondos insuficientes.
 
-To build the project run:
+### 🧾 Historial de transacciones
+- Registro de suscripciones y cancelaciones.
+- Visualización cronológica de movimientos.
 
-```bash
-ng build
-```
+### 🔔 Notificaciones
+- Selección de método de notificación:
+  - 📧 Email
+  - 📱 SMS
+- Preparado para integración con servicios externos.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### 🔐 Autenticación (estructura base)
+- Manejo de sesión mediante store (`AuthStore`).
+- Arquitectura preparada para guards y escalabilidad futura.
 
-## Running unit tests
+---
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## 🌓 Experiencia de usuario
 
-```bash
-ng test
-```
+- Diseño completamente responsivo (mobile-first).
+- Sidebar adaptativo + navegación inferior en móviles.
+- Soporte para modo oscuro.
+- Interfaz moderna con microinteracciones suaves.
+- Estética tipo **glassmorphism**.
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 🛠️ Stack tecnológico
 
-```bash
-ng e2e
-```
+| Capa | Tecnología |
+| :--- | :--- |
+| **Framework** | Angular (Signals & Standalone Components) |
+| **Estilos** | Tailwind CSS + SCSS |
+| **UI** | PrimeNG |
+| **Alertas** | SweetAlert2 |
+| **Estado** | Stores con Signals (`FondoStore`, `AuthStore`) |
+| **Iconos** | Material Symbols |
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 🚀 Ejecución del proyecto
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Requisitos
+- Node.js (v18+)
+- Angular CLI
+
+### Instalación
+
+git clone https://github.com/harvy1997/btg-found.git
+cd btg-found
+npm install
+npm run dev
+
+
+### 📂 Estructura del proyecto
+
+src/app/
+├── core/
+│   ├── interfaces/     # Modelos de datos
+│   └── services/       # Lógica de negocio y stores
+├── layout/             # Layout principal (sidebar, header)
+├── pages/              # Vistas principales
+└── shared/             # Componentes reutilizables

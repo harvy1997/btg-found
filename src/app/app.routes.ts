@@ -6,11 +6,13 @@ import { Login } from './pages/login/login';
 
 export const routes: Routes = [
     {
-        path: '', component: Layout, children: [
+        path: 'home', component: Layout, children: [
             { path: '', component: Home },
             { path: 'list', component: List },
         ]
     }, {
         path: 'login', component: Login
+    }, {
+        path: '', component: Login
     }
 ];

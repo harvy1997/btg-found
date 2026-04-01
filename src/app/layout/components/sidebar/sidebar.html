@@ -10,7 +10,7 @@
 
         <span class="text-xs uppercase tracking-widest font-bold mb-8 block
             text-secondary dark:text-on-surface dark:opacity-60">
-            Nombre de la persona
+            {{ userName() }}
         </span>
     </div>
 
@@ -36,8 +36,8 @@
                 opacity-60 hover:opacity-100 hover:text-primary/90
                 text-primary dark:text-on-surface dark:hover:text-secondary">
 
-                <span class="material-symbols-outlined text-sm mr-2">contact_support</span>
-                Soporte
+                <span class="material-symbols-outlined text-sm mr-2" (click)="logout()">exit_to_app</span>
+                Cerrar sesión
             </a>
         </div>
     </div>
